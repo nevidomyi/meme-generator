@@ -1,18 +1,32 @@
 import React from "react";
-import memesData from "../memesData";
+// import memesData from "../memesData";
 
 export default function Meme() {
-    // let url;
-
-    // const [memeImage, setMemeImage] = React.useState('https://i.imgflip.com/9ehk.jpg');
+    const placeholderInit = "https://i.imgflip.com/1bij.jpg";
 
     const [meme, setMeme] = React.useState({
         topText:"",
         bottomText:"",
-        randomImage:"https://i.imgflip.com/1bij.jpg",
+        randomImage: placeholderInit,
     });
 
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+    const [allMemeImages, setAllMemeImages] = React.useState({});
+
+    React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemeImages(data)
+        }
+        getMemes()
+    }, [])
+
+    // useEffect without async/await and don't cleaned up 
+    // React.useEffect(() => {
+    //     fetch("https://api.imgflip.com/get_memes")
+    //         .then(res => res.json())
+    //         .then(data => setAllMemeImages(data))
+    // }, [])
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -47,6 +61,7 @@ export default function Meme() {
                 <input
                     type="text"
                     placeholder="Top text"
+                    autocomplete="off"
                     className="form--input"
                     name="topText"
                     onChange={handlerText}
@@ -55,6 +70,7 @@ export default function Meme() {
                 <input
                     type="text"
                     placeholder="Bottom text"
+                    autocomplete="off"
                     className="form--input"
                     name="bottomText"
                     onChange={handlerText}
