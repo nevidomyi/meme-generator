@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# MEME Generator
+
+Features:
+- Usehook give us random image every time, when we push the button.
+- After that, you have to type text in inputs. It will be showing on our random image.
+
+### Example:
+
+![Example-img](https://user-images.githubusercontent.com/47025875/215269457-f94aabc8-412b-40c0-be47-100bd352ed6b.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
