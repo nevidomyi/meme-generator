@@ -6,7 +6,8 @@ Features:
 
 ### Example:
 
-![Example-img](https://user-images.githubusercontent.com/47025875/215269457-f94aabc8-412b-40c0-be47-100bd352ed6b.png)
+![Example1](https://user-images.githubusercontent.com/47025875/215270604-4f951fca-1a9a-4abd-a2fe-d24085c9d294.png)
+
 
 ## Getting Started with Create React App
 
